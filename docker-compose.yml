@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile.backend
+      args:
+        - HTTP_PROXY
+        - http_proxy
+        - HTTPS_PROXY
+        - https_proxy
+        - no_proxy
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/code
+    ports:
+      - '8000:8000'
