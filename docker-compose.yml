@@ -21,6 +21,9 @@ services:
   db:
     image: postgres:10.1
 
+  redis:
+    image: redis:4.0.6-alpine
+
   web:
     image: nginx:1.13.8
     ports:
